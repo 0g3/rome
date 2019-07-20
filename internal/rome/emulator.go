@@ -75,6 +75,7 @@ type Emulator struct {
 	gm          GopherMover
 	updateDelay time.Duration
 	goal        bool
+	moveCount   int
 }
 
 func NewEmulator(m Maze, gm GopherMover, updateDelay time.Duration) (*Emulator, error) {
@@ -88,7 +89,10 @@ func NewEmulator(m Maze, gm GopherMover, updateDelay time.Duration) (*Emulator, 
 
 func (e *Emulator) update(screen *ebiten.Image) error {
 	if e.goal {
-		if err := ebitenutil.DebugPrint(screen, "FINISH!!"); err != nil {
+		if err := ebitenutil.DebugPrint(
+			screen,
+			fmt.Sprintf("MOVE COUNT: %d", e.moveCount),
+		); err != nil {
 			return err
 		}
 		return nil
@@ -136,6 +140,7 @@ func (e *Emulator) update(screen *ebiten.Image) error {
 	if err := e.gm.Move(e.m, e.gc); err != nil {
 		return err
 	}
+	e.moveCount++
 
 	time.Sleep(e.updateDelay)
 
