@@ -51,7 +51,7 @@ func init() {
 		panic(err)
 	}
 
-	gopherImg, err = ebitenutil.NewImageFromURL("empty")
+	gopherImg, _, err = ebitenutil.NewImageFromFile(gopherImagePath, ebiten.FilterDefault)
 	if err != nil {
 		panic(err)
 	}

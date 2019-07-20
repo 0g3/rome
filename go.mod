@@ -11,6 +11,9 @@ require (
 	github.com/hajimehoshi/go-mp3 v0.2.1 // indirect
 	github.com/hajimehoshi/oto v0.3.6 // indirect
 	github.com/kr/pty v1.1.8 // indirect
+	github.com/shurcooL/go v0.0.0-20190704215121-7189cc372560 // indirect
+	github.com/shurcooL/go-goon v0.0.0-20170922171312-37c2f522c041 // indirect
+	github.com/shurcooL/goexec v0.0.0-20181215213458-76a6b9a99126 // indirect
 	golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4 // indirect
 	golang.org/x/exp v0.0.0-20190627132806-fd42eb6b336f // indirect
 	golang.org/x/mobile v0.0.0-20190711165009-e47acb2ca7f9 // indirect
