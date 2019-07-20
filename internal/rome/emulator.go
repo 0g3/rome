@@ -6,6 +6,8 @@ import (
 	"github.com/hajimehoshi/ebiten"
 	"github.com/hajimehoshi/ebiten/ebitenutil"
 	"image/color"
+	"os"
+	"path"
 	"time"
 )
 
@@ -22,6 +24,12 @@ const (
 )
 
 func init() {
+	dir := path.Dir(os.Args[0])
+	fmt.Println(dir)
+	if err := os.Chdir(dir); err != nil {
+		panic(err)
+	}
+
 	var err error
 
 	// road
